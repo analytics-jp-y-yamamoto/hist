@@ -36,7 +36,7 @@ def main_page():
     column_list=st.session_state.df0.columns.values
     Day_list=st.session_state.df0.index.values
     Day_list_selector=st.sidebar.selectbox( "データセット選択",Day_list)
-    bin = st.sidebar.slider('binの幅を決めてください', 5, 100, 10)
+    bin = st.sidebar.slider('binの幅を決めてください', 5, 100, 25)
 
     hist_array=[]
     for i in range(2000):
@@ -48,7 +48,7 @@ def main_page():
     fig1, ax1 = plt.subplots()
 
     ax1.hist(hist_array,bins=bin,ec='navy', range=(-1, 1))
-    ax1.set_title("全店売上金額度数表")
+    ax1.set_title("標準正規分布2000個データ")
     ax1.set_xlabel(Day_list_selector)
     ax1.set_ylabel("度数")
     ax1.set_yticks(np.arange(0,y_max,int(y_max/10)))
