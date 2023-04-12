@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import japanize_matplotlib
 
 # ページのタイトル設定
 st.set_page_config(
@@ -31,8 +32,8 @@ def main_page():
         unsafe_allow_html=True,
     )
 
-    shop_list=['A',"B","C","D","E","F","G","H","I","J"]
-    Day_list=["2020/03/31","2020/04/01","2020/04/02","2020/04/03","2020/04/04","2020/04/05","2020/04/06"]
+    shop_list=st.session_state.df0.columns.values
+    Day_list=st.session_state.df0.index.values
     shop_list_selector=st.sidebar.selectbox( "ショップ選択",shop_list)
     Day_list_selector=st.sidebar.selectbox( "日時選択",Day_list)
 
@@ -41,14 +42,10 @@ def main_page():
     day5=[]
 
 
-    for i in range(7):
-        hist_array.append(st.session_state.df0[shop_list_selector][i])
+    for i in range(10):
+        hist_array.append(st.session_state.df0[shop_list[i]][Day_list_selector])
 
     top=st.session_state.df0.sort_values(shop_list_selector,ascending=False)[:5][shop_list_selector]
-
-    #for i in range(5):
-        #top5.append(top[1][i])
-        #day5.append(top[0][i])
 
     shop_list_top5=st.session_state.df0.iloc[0]
     shop_list_top5=shop_list_top5[:5]
@@ -57,12 +54,18 @@ def main_page():
     fig2, ax2 = plt.subplots()
 
     ax1.hist(hist_array,bins=4)
-    #ax2.bar(top5,top5)
+    ax1.set_title("全店売上金額度数表")
+    ax1.set_xlabel(Day_list_selector)
+    #ax1.set_ylabel("年齢")
+
+
+    ax2.bar(top.index.values,top)
+    ax2.set_title(shop_list_selector+"店上位5位売り上げ")
 
     st.pyplot(fig1)
     st.pyplot(fig2)
 
-    #st.text([top5[1]])
+    #st.text(top.index.values)
     #st.text(st.session_state.df0)
     #st.text(st.session_state.df0.at[Day_list_selector,shop_list_selector])
 
