@@ -1,6 +1,7 @@
 # hist
-![スクリーンショット 2023-04-12 15 38 18](https://user-images.githubusercontent.com/129849323/231372639-5800f77e-d488-4ded-900a-375ca323fcba.png "初期画面")
+![スクリーンショット 2023-04-12 17 29 41](https://user-images.githubusercontent.com/129849323/231399863-ef9244eb-c72c-435b-ac2f-e29c82c03372.png)
 
-![スクリーンショット 2023-04-12 15 38 41](https://user-images.githubusercontent.com/129849323/231372642-58ca69cf-868e-4164-b134-e223fed1264a.png "店名選択後")
+![スクリーンショット 2023-04-12 17 30 03](https://user-images.githubusercontent.com/129849323/231399871-1f369df7-71bf-467c-b4a5-12f72f41f6de.png)
 
-![スクリーンショット 2023-04-12 15 38 06](https://user-images.githubusercontent.com/129849323/231372633-3cdc908d-4794-4afa-9543-092a4e334dd1.png "日時選択後")
+![スクリーンショット 2023-04-12 17 30 16](https://user-images.githubusercontent.com/129849323/231399878-885ab1b3-e41e-4199-8417-6913bef7e5b4.png)
+画面")
