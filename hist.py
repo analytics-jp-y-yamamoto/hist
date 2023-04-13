@@ -36,7 +36,7 @@ def main_page():
     column_list = st.session_state.df0.columns.values
     data_list = st.session_state.df0.index.values
     data_list_selector = st.sidebar.selectbox( "データセット選択", data_list)
-    bin = st.sidebar.slider('binの幅を決めてください', 5, 100, 25)
+    bin = st.sidebar.slider('binの数を決めてください', 5, 100, 25)
 
     hist_array = []
     for i in range(st.session_state.df0.shape[1]):
